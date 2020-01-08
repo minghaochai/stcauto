@@ -6,27 +6,3 @@
     max-width: 3%;
 }
 
-.page-footer {
-    background-color: #f7f6f6;
-} 
-
-.page-footer h5 {
-    color: #e61610;
-}
-
-.page-footer ul li {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.page-footer ul li a {
-    color: #000000;
-}
-
-.page-footer ul li a img {
-    max-width: 10%;
-} 
-
-.footer-copyright {
-    background-color: #ffffff;
-}
