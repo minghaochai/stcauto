@@ -1,0 +1,43 @@
+h1 {  
+    text-align:center;
+}
+
+img {
+    height: 75vh;
+    width: 100vw;
+}
+
+div {
+	left: 0;
+	right: 0;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+  }
+  
+.column {
+    display:flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}
+
+.column img{
+    height: 20vh;
+    width: 10vw;
+}
+
+@media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+      display:flex;
+      justify-content: center;
+    }
+
+    .column img{
+        height: 30vh;
+        width: 30vw;
+    }
+  }
