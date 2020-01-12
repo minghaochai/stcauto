@@ -1,0 +1,46 @@
+h1 {  
+    text-align:center;
+}
+
+h2 {
+    font-family: "Helvetica Neue";
+    text-align:center;
+}
+
+div {
+	left: 0;
+	right: 0;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.carousel-item img{
+    height: 60vh;
+    width: 100vw;
+}
+
+.card {
+    display:flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    width: 20vw;
+    border: none;
+}
+
+.card img{
+    height: 20vh;
+    width: 15vw;
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+      width: 75%;
+      display:flex;
+      justify-content: center;
+    }
+
+    .card img{
+        height: 20vh;
+        width: 70vw;
+    }
+}

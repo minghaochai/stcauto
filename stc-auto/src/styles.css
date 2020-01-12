@@ -8,6 +8,12 @@ p {
     font-family: "Helvetica Neue";
 }
 
+h1 {
+    font-family: "Helvetica Neue";
+    color: #e61610;
+}
+
 h5 {
+    font-family: "Helvetica Neue";
     font-size: 15px;
 }
