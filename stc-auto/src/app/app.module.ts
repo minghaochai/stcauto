@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { ModalpopupComponent } from './modalpopup/modalpopup.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     AboutComponent,
     FooterComponent,
     CarouselComponent,
+    ModalpopupComponent,
   ],
   imports: [
     BrowserModule,

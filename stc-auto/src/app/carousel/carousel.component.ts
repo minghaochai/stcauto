@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent {
-  images = ["assets/images/porscheDealership.jpg", "assets/images/porscheManufacture.jpg", "assets/images/porscheTeam.jpg"];
+  images = ["assets/images/AboutUs2.JPG", "assets/images/AboutUs1.png", "assets/images/porscheTeam.jpg"];
 }
