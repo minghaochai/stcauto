@@ -3,13 +3,11 @@
         Contact Us
     </h1>
 </div>
-
-<div>
-    <iframe scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.875676582118!2d101.71944725095143!3d3.127554154144521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35c3530c9de9%3A0xddc9e9b963176a0!2sSTC%20Auto%20Parts%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1579438915475!5m2!1sen!2smy"></iframe>
-</div>
-
-<div class="grid-container"> 
-    <div> 
+<div class="map-container">
+    <div class="googlemap">
+        <iframe scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.875676582118!2d101.71944725095143!3d3.127554154144521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35c3530c9de9%3A0xddc9e9b963176a0!2sSTC%20Auto%20Parts%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1579438915475!5m2!1sen!2smy"></iframe>
+    </div>
+    <div class="locationDetail">
         <table>
             <tr>
               <td>Address:</td>
@@ -29,33 +27,31 @@
             </tr>
         </table>
     </div>
-    <div>
-        <table>
-            <tr>
-              <td>Monday</td>
-              <td><a>09:00 - 18:30</a></td>
-            </tr>
-            <tr>
-                <td>Tuesday </td>
-                <td><a>09:00 - 18:30</a></td>
-            </tr>
-            <tr>
-                <td>Wednesday</td>
-                <td><a>09:00 - 18:30</a></td>
-            </tr>
-            <tr>
-                <td>Thursday</td>
-                <td><a>09:00 - 18:30</a></td>
-              </tr>
-              <tr>
-                <td>Friday</td>
-                <td><a>09:00 - 18:30</a></td>
-            </tr>
-              <tr>
-                  <td>Saturday</td>
-                  <td><a>09:00 - 18:30</a></td>
-              </tr>
-        </table>
+</div>
+<div class="row">
+    <div class="card">
+        <a>Monday</a>
+        <a>09:00 - 18:30</a>
+    </div>
+    <div class="card">
+        <a>Tuesday</a>
+        <a>09:00 - 18:30</a>
+    </div>
+    <div class="card">
+        <a>Wednesday</a>
+        <a>09:00 - 18:30</a>
+    </div>
+    <div class="card">
+        <a>Thursday</a>
+        <a>09:00 - 18:30</a>
+    </div>
+    <div class="card">
+        <a>Friday</a>
+        <a>09:00 - 18:30</a>
+    </div>
+    <div class="card">
+        <a>Saturday</a>
+        <a>09:00 - 18:30</a>
     </div>
 </div>
 <div>
@@ -63,8 +59,56 @@
 </div>
 <div>
     <h1>
-        For enquiries, contact us through the button below.
+        Enquiries
     </h1>
 </div>
-
-<app-modalpopup></app-modalpopup>
+<div class="form-container">
+    <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="frameChassis">Frame/Chassis Number</label>
+            <input type="text" class="form-control" id="frameChassis">
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" class="form-control" id="contactNumber" pattern="[+]{1}[0-9]{11,14}" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="country">Country</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Malaysia</option>
+                    <option>...</option>
+                </select>                
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="carModel">Car Model</label>
+                <input type="text" class="form-control" id="carModel" placeholder="Toyota - Camry">
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="othRemarks">Other remarks</label>
+          <textarea type="text" class="form-control" id="othRemarks"></textarea>
+        </div>
+      </form>
+      <div>
+        <button type="button" class="btn btn-outline-dark">Submit</button>
+      </div>
+</div>

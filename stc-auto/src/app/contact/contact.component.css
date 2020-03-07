@@ -3,23 +3,33 @@ h1 {
 }
 
 iframe {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-evenly;
+    height: 30vw;
+    border: none;
+}
+
+.map-container {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+.googlemap {
+    display:flex;
+    flex-direction:column;
+    height: 27vw;
+    width: 100%;
+}
+
+.locationDetail {
+    display:flex;
+    flex-direction:column;
     height: 25vw;
     width: 100%;
-    border: none;
-    overflow: hidden;
 }
 
 table {
-    font-family: "Helvetica Neue";
-    border-collapse: collapse;
-    float: left;
-    justify-content: center;
-    table-layout: fixed;
     border: 1px solid #e61610;
-    min-height: 300px;
+    height: 27vw;
 }
 
 tr {
@@ -27,10 +37,8 @@ tr {
 }
   
 td, th {
-    text-align: left;
+    text-align: center;
     padding: 8px;
-    overflow: hidden;
-    border: 0px;
 }
 
 td > a {
@@ -44,11 +52,11 @@ div {
     margin-top: 20px;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-column-gap: 20%;
-    justify-content: center;
+.card {
+    display:flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    border: none;
 }
 
 hr {
@@ -58,32 +66,66 @@ hr {
     margin-bottom: 50px;
 }
 
+.form-container {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+input {
+    border-color: #e61610;
+}
+
+input:focus {
+    border-color: #e61610;
+    outline: none;
+    box-shadow: 0 0 10px #e61610;
+}
+
+select {
+    border-color: #e61610;
+}
+
+select:focus {
+    border-color: #e61610;
+    outline: none;
+    box-shadow: 0 0 10px #e61610;
+}
+
+textarea {
+    border-color: #e61610;
+    outline-color: #e61610;
+    resize: none;
+    width: 100%;
+    height: 20vw;
+}
+
+textarea:focus{
+    border-color: #e61610;
+    outline: none;
+    box-shadow: 0 0 10px #e61610;
+}
 
 @media screen and (max-width: 1100px) {
+    /*
     iframe {
       width: 100%;
       height: 40vw;
       display:flex;
       justify-content: center;
     }
-    
-    table {
-        float: none;
-        margin: 0 auto;
-        margin-top: 10px;
+    */
+
+    .card {
+        width: 75%;
     }
 
-    
-    td {
-        display:flex;
-        flex-direction: column;
-        text-align: center;
-        width: 75vw;
-
+    .map-container {
+        flex-direction:column;
+        justify-content: space-around;
     }
 
-    .grid-container {
-        display: inline;
+    textarea {
+        height: 30vw;
     }
 }
 
