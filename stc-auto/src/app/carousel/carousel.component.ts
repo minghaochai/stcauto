@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent {
-  images = ["assets/images/AboutUs2.JPG", "assets/images/AboutUs1.png", "assets/images/porscheTeam.jpg"];
+  @Input() 
+  pageImages: string;
+
+  images = [];
+
+  ngOnInit() {
+    /*
+    this.images = ["assets/images/AboutUs2.JPG", this.pageImages, "assets/images/porscheTeam.jpg"];
+    */
+    this.images = ["assets/images/AboutUs2.JPG", "assets/images/AboutUs1.png"];
+  }
 }

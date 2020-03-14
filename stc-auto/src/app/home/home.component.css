@@ -24,10 +24,18 @@ div {
     align-content: space-evenly;
 }
 
+
 .column img{
     height: 20vh;
     width: 10vw;
 }
+
+
+.carousel-item img{
+    height: 60vh;
+    width: 100vw;
+}
+
 
 @media screen and (max-width: 500px) {
     .column {
@@ -36,8 +44,10 @@ div {
       justify-content: center;
     }
 
+    
     .column img{
         height: 30vh;
         width: 30vw;
     }
+    
 }

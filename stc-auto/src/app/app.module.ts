@@ -12,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ModalpopupComponent } from './modalpopup/modalpopup.component';
+import { DynamicCarouselComponent } from './dynamic-carousel/dynamic-carousel.component';
+import { CarouselHomeComponent } from './carousel-home/carousel-home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ModalpopupComponent } from './modalpopup/modalpopup.component';
     FooterComponent,
     CarouselComponent,
     ModalpopupComponent,
+    DynamicCarouselComponent,
+    CarouselHomeComponent,
   ],
   imports: [
     BrowserModule,
