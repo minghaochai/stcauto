@@ -2,7 +2,7 @@
     color: #e61610;
 }
 
-.navbar-brand {
-    max-width: 3%;
+.navbar a > img {
+    height: 5vh;
+    width: 7vw;
 }
-
