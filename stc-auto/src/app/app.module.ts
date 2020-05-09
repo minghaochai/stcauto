@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { StcAutoBackTemplateComponent } from './stc-auto-back-template/stc-auto-back-template.component';
 import { AppComponent } from './app.component';
@@ -31,7 +31,8 @@ import { CarouselHomeComponent } from './carousel-home/carousel-home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
