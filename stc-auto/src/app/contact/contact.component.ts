@@ -1,4 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -7,35 +8,46 @@ import { Component, OnInit, NgModule } from '@angular/core';
 })
 
 export class ContactComponent implements OnInit {
-  requestorName: string; 
+  requestorName: string;
   requestorFrame: string;
   requestorContact: string;
   requestorAddress: string;
-  requestorMail: string; 
+  requestorMail: string;
   requestorCountry: string;
   requestorCarModel: string;
-  requestorRemarks: string; 
+  requestorRemarks: string;
+  countries = [];
 
-  constructor() { 
+  private countryListURL = '/api/CountryList'
+  private enuiryMailURL = '/api/emailRequest'
+
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
+    this.GetCountryList();
   }
 
-  sendMail() {
-    let details = {
-      requestName: this.requestorName,
-      requestFrame: this.requestorFrame,
-      requestContact: this.requestorContact,
-      requestAddress: this.requestorAddress,
-      requestMail: this.requestorMail,
-      requestCountry: this.requestorCountry,
-      requestCarModel: this.requestorCarModel,
-      requestRemarks: this.requestorRemarks,
-    }
+  async GetCountryList() {
+    await this.http.get(this.countryListURL).subscribe((data: any[])=>{
+      this.countries = data;
+    })
+  }
 
-    console.log("clicked")
-    console.log(this.requestorCountry)
-    console.log(details.requestCountry)
+  async SendMail() {
+
+    var jsonMailDetails = {
+      "requestorName": this.requestorName,
+      "requestorMail": this.requestorMail,
+      "requestorContact": this.requestorContact,
+      "requestorAddress": this.requestorAddress,
+      "requestorCountry": this.requestorCountry['country'],
+      "requestorCarModel": this.requestorCarModel,
+      "requestorFrame": this.requestorFrame,
+      "requestorRemarks": this.requestorRemarks
+    };
+
+    await this.http.post<any>(this.enuiryMailURL, jsonMailDetails).subscribe(data=>{
+    })
   }
 }
