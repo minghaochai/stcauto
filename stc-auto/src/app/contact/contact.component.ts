@@ -35,7 +35,6 @@ export class ContactComponent implements OnInit {
   }
 
   async SendMail() {
-
     var jsonMailDetails = {
       "requestorName": this.requestorName,
       "requestorMail": this.requestorMail,
@@ -49,5 +48,9 @@ export class ContactComponent implements OnInit {
 
     await this.http.post<any>(this.enuiryMailURL, jsonMailDetails).subscribe(data=>{
     })
+  }
+
+  ValidateForm() {
+    
   }
 }

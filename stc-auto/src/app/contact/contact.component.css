@@ -99,6 +99,11 @@ textarea {
     height: 20vw;
 }
 
+.required-field::after {
+    content: "*";
+    color: red;
+}
+
 textarea:focus{
     border-color: #e61610;
     outline: none;
