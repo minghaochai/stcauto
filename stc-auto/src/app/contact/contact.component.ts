@@ -17,10 +17,10 @@ export class ContactComponent implements OnInit {
   requestorCarModel: string;
   requestorRemarks: string;
   countries = [];
-
-  private countryListURL = '/api/CountryList'
-  private enuiryMailURL = '/api/emailRequest'
-
+  
+  private countryListURL = 'https://stcautomailservice.azurewebsites.net/CountryList'
+  private enquiryMailURL = 'https://stcautomailservice.azurewebsites.net/sendmail'
+  
   constructor(private http: HttpClient) {
   }
 
@@ -46,7 +46,7 @@ export class ContactComponent implements OnInit {
       "requestorRemarks": this.requestorRemarks
     };
 
-    await this.http.post<any>(this.enuiryMailURL, jsonMailDetails).subscribe(data=>{
+    await this.http.post<any>(this.enquiryMailURL, jsonMailDetails).subscribe(data=>{
     })
   }
 

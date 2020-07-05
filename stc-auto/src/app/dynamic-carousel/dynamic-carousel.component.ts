@@ -10,6 +10,7 @@ export class DynamicCarouselComponent implements OnInit {
   @Input()
   imageObject: Array<{link: string, page: string, header: string, description: string}>;
 
+  upcoming_events = []
   event_list = [
     {
       event:' Event 1',
