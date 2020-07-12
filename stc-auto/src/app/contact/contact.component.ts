@@ -40,7 +40,7 @@ export class ContactComponent implements OnInit {
       "requestorMail": this.requestorMail,
       "requestorContact": this.requestorContact,
       "requestorAddress": this.requestorAddress,
-      "requestorCountry": this.requestorCountry['country'],
+      "requestorCountry": (this.requestorCountry != null) ? this.requestorCountry['country'] : undefined,
       "requestorCarModel": this.requestorCarModel,
       "requestorFrame": this.requestorFrame,
       "requestorRemarks": this.requestorRemarks

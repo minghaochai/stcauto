@@ -6,3 +6,10 @@
     height: 5vh;
     width: 7vw;
 }
+
+@media screen and (max-width: 500px) {
+    .navbar a > img {
+        height: 5vh;
+        width: 20vw;
+    }
+}

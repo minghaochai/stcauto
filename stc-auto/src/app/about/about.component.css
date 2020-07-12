@@ -23,7 +23,7 @@ div {
     display:flex;
     flex-wrap: wrap;
     align-content: space-evenly;
-    width: 20vw;
+    width: 10vw;
     border: none;
 }
 
