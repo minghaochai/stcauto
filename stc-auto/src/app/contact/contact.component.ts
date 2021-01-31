@@ -1,6 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-contact',
@@ -19,6 +20,8 @@ export class ContactComponent implements OnInit {
   requestorRemarks: string;
   countries = [];
   showMsg: boolean = false;
+  showLocation1: boolean = true;
+  showLocation2: boolean = false;
 
   //private countryListURL = 'https://stcautomailservice.azurewebsites.net/CountryList'
   //private enquiryMailURL = 'https://stcautomailservice.azurewebsites.net/sendmail'
@@ -39,6 +42,17 @@ export class ContactComponent implements OnInit {
   //    this.countries = data;
   //  })
   //}
+
+  displayLocation1() {
+    this.showLocation1 = true;
+    this.showLocation2 = false;
+  }
+
+
+  displayLocation2() {
+    this.showLocation1 = false;
+    this.showLocation2 = true;
+  }
 
   async GetCountryListJson() {
     await this.http.get("./assets/country.json").subscribe((data: any[])=>{

@@ -110,7 +110,7 @@ textarea:focus{
     box-shadow: 0 0 10px #e61610;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
     /*
     iframe {
       width: 100%;
@@ -119,9 +119,12 @@ textarea:focus{
       justify-content: center;
     }
     */
+    .map-container {
+        margin-bottom: 350px;
+    }
 
     .row {
-        margin-top: 170px;
+        margin-top: 150px;
     }
 
     .card {

@@ -4,14 +4,20 @@
     </h1>
 </div>
 <div class="map-container">
-    <div class="googlemap">
+    <div class="googlemap" *ngIf="showLocation1">
         <iframe scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.875676582118!2d101.71944725095143!3d3.127554154144521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35c3530c9de9%3A0xddc9e9b963176a0!2sSTC%20Auto%20Parts%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1579438915475!5m2!1sen!2smy"></iframe>
+    </div>
+    <div class="googlemap" *ngIf="showLocation2">
+        <iframe scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.3036098661696!2d101.42922781475698!3d3.0128149978058705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdab619ecbb215%3A0x6ee1e3cf555bc42b!2s28%2C%20Jalan%20Sentosa%205%2C%20Taman%20Bayu%20Perdana%2C%2041200%20Klang%2C%20Selangor!5e0!3m2!1sen!2smy!4v1612067325478!5m2!1sen!2smy"></iframe>
     </div>
     <div class="locationDetail">
         <table>
             <tr>
               <td>Address:</td>
-              <td><a>No.4, Jalan 3/93A, Warisan Cityview, Batu 2½ , Off Jalan Cheras, 56100 Kuala Lumpur,Malaysia </a></td>
+              <td>
+                <a class ="btn" style="color:rgb(0, 140, 255)" (click)="displayLocation1()">No.4, Jalan 3/93A, Warisan Cityview, Batu 2½ , Off Jalan Cheras, 56100 Kuala Lumpur,Malaysia </a>
+                <a class ="btn" style="color:rgb(0, 140, 255)" (click)="displayLocation2()">28, Jalan Sentosa 5, Taman Bayu Perdana, 41200 Klang, Selangor </a>
+            </td>
             </tr>
             <tr>
                 <td>Tel:</td>
