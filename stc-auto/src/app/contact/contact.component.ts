@@ -1,7 +1,10 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { APP_CONFIG, AppConfig } from '../app-config.module';
 import { Observable } from 'rxjs';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import '../../assets/smtp.js'; 
+declare let Email : any;
 
 @Component({
   selector: 'app-contact',
@@ -9,6 +12,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./contact.component.css']
 })
 
+@Injectable()
 export class ContactComponent implements OnInit {
   requestorName: string;
   requestorFrame: string;
@@ -29,8 +33,10 @@ export class ContactComponent implements OnInit {
   private countryListURL = 'http://localhost:3000/CountryList'
   private enquiryMailURL = 'http://localhost:3000/sendmail'
   
-  constructor(private http: HttpClient) {
-  }
+  constructor(
+    private http: HttpClient,
+    @Inject(APP_CONFIG) private config: AppConfig
+    ) { }
 
   ngOnInit() {
     //this.GetCountryList();
@@ -60,6 +66,7 @@ export class ContactComponent implements OnInit {
     })
   }
 
+  /*
   async SendMail() {
     var jsonMailDetails = {
       "requestorName": this.requestorName,
@@ -75,6 +82,36 @@ export class ContactComponent implements OnInit {
     await this.http.post<any>(this.enquiryMailURL, jsonMailDetails).subscribe(data=>{
       this.showMsg= true;
     })
+  }
+  */
+
+  async SendMail(){
+    
+    Email.send({
+      /*
+      Host : 'mail.stcauto.com.my',
+      Username : 'test@stcauto.com.my',
+      Password : '123456789zxcvbN!',
+      */
+      Host : this.config.emailHost,
+      Username : this.config.emailLogin,
+      Password : this.config.emailPW,
+      To : 'chaiminghao69@gmail.com',
+      From : this.config.emailLogin,
+      Subject : 'Testing',
+      Body : 
+        'You have received an Enquiry from ' + this.requestorName + ', please refer to the details below' + '<br>' + '<br>' +
+        'Name: ' + this.requestorName + '<br>' +
+        'Email: ' + this.requestorMail + '<br>' +
+        'Contact number: ' + this.requestorContact + '<br>' +
+        'Address: ' + this.requestorAddress + '<br>' +
+        'Country: ' + this.requestorCountry['country'] + '<br>' +
+        'Car Model: ' + this.requestorCarModel + '<br>' +
+        'Frame: ' + this.requestorFrame + '<br>' +
+        'Remarks: ' + this.requestorRemarks + '<br>' + '<br>' +
+
+        'This email is sent via the contact form on the STC Auto Parts webpage'
+      }).then( this.showMsg= true );
   }
 
   ValidateForm() {
